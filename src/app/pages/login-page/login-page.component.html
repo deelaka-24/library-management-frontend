@@ -1,1 +1,91 @@
-<p>login-page works!</p>
+<div class="flex items-center justify-center min-h-screen">
+  <section
+    class="flex flex-col justify-center p-20 bg-white border border-solid border-zinc-200 max-w-[680px] max-md:px-5"
+  >
+    <header
+      class="flex flex-col w-full text-center text-zinc-800 max-md:max-w-full"
+    >
+      <h1 class="w-full text-5xl font-bold leading-none max-md:max-w-full">
+        Welcome Back
+      </h1>
+      <p class="mt-2 text-lg leading-snug max-md:max-w-full">
+        Please log in to continue
+      </p>
+    </header>
+    <div class="flex flex-col w-full pt-6 mt-6 max-md:max-w-full">
+      <div class="flex flex-col w-full leading-snug max-md:max-w-full">
+        <div class="flex flex-col w-full max-md:max-w-full">
+          <label for="email" class="text-sm text-zinc-800 max-md:max-w-full"
+            >Email Address</label
+          >
+          <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            class="flex-1 shrink gap-2 self-stretch px-4 py-3.5 mt-2 w-full text-base whitespace-nowrap border-b border-solid bg-slate-100 border-b-neutral-300 min-h-[48px] text-zinc-500 max-md:max-w-full"
+            required
+          />
+        </div>
+      </div>
+      <div class="flex flex-col w-full mt-4 leading-snug max-md:max-w-full">
+        <div class="flex flex-col w-full whitespace-nowrap max-md:max-w-full">
+          <label for="password" class="text-sm text-zinc-800 max-md:max-w-full"
+            >Password</label
+          >
+          <div
+            class="flex flex-wrap gap-2 items-center px-4 py-3 mt-2 w-full text-base border-b border-solid bg-slate-100 border-b-neutral-300 min-h-[48px] text-zinc-500 max-md:max-w-full"
+          >
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              class="self-stretch flex-1 my-auto bg-transparent border-none shrink basis-0 max-md:max-w-full"
+              required
+            />
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/7fb147081ce84ac9a573db19d9f3c9f9/32537744ce5efd6758f6f802778fe54af9e49e7354c870b39a3823466088512c?apiKey=7fb147081ce84ac9a573db19d9f3c9f9&"
+              class="self-stretch object-contain w-6 my-auto shrink-0 aspect-square"
+              alt=""
+            />
+          </div>
+        </div>
+        <p class="mt-1 text-xs text-zinc-500 max-md:max-w-full">
+          It must be a combination of minimum 8 letters, numbers, and symbols.
+        </p>
+      </div>
+      <div
+        class="flex flex-wrap items-center w-full gap-4 mt-4 max-md:max-w-full"
+      >
+        <div class="flex items-center self-stretch gap-2 my-auto">
+          <input
+            type="checkbox"
+            id="remember-me"
+            class="w-4 h-4 border border-solid border-neutral-900"
+          />
+          <label
+            for="remember-me"
+            class="self-stretch my-auto text-sm leading-snug text-zinc-800"
+            >Remember me</label
+          >
+        </div>
+        <a
+          [routerLink]="['/forgot-password-page']"
+          class="self-stretch flex-1 my-auto text-sm leading-snug text-right shrink basis-0 text-blue-950"
+        >
+          Forgot Password?
+        </a>
+      </div>
+      <button
+        [routerLink]="['/dashboard']"
+        type="submit"
+        class="flex justify-center items-center px-3 py-4 mt-4 w-full text-base font-medium tracking-wide leading-none text-white bg-blue-600 border-2 border-blue-600 border-solid min-h-[48px] max-md:max-w-full"
+      >
+        Log In
+      </button>
+    </div>
+    <hr
+      class="mt-6 w-full border border-solid bg-zinc-200 border-zinc-200 min-h-[1px] max-md:max-w-full"
+    />
+  </section>
+</div>

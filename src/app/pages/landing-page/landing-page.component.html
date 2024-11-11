@@ -1,33 +1,31 @@
 <div class="min-h-screen flex items-center justify-center bg-[#F5F5F5]">
-  <!-- Main Content -->
   <div class="w-[1440px] h-[2138px] flex flex-col items-center">
-    <!-- Header -->
     <div
       class="w-[1440px] h-[80px] text-[#0F62FE] flex items-center justify-center text-[32px] font-bold"
     >
       The Librarian
     </div>
-
-    <!-- Hero Section -->
+    <!-- hero -->
     <div class="w-[1440px] h-[500px] flex justify-center items-center">
       <div class="flex gap-[30px]">
-        <!-- Left Section with Text and Buttons -->
+        <!-- section -->
         <div class="w-[630px] h-[425px] flex flex-col justify-center gap-4">
-          <!-- Title -->
+          <!-- title -->
           <div class="text-black text-[54px] font-bold mb-6">
             Access Thousands of <br />
             <span class="text-[#DB47D8]">Books</span> at Your Fingertips
           </div>
-          <!-- Description -->
+          <!-- description -->
           <div class="text-black text-[18px]">
             Discover thousands of books, journals, and resources at your
             fingertips. Whether managing your account or finding your next great
             read, our library system makes it easy to connect with the knowledge
             you need.
           </div>
-          <!-- Buttons -->
+          <!-- buttons -->
           <div class="flex gap-4 mt-4">
             <button
+              routerLink="login-page"
               type="button"
               class="w-[141px] h-[56px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-[20px] px-5 py-2.5 focus:outline-none"
             >
@@ -46,14 +44,16 @@
           <img
             src="assets/img/books.png"
             alt="Books"
-            class="w-full h-full object-cover"
+            class="object-cover w-full h-full"
           />
         </div>
       </div>
     </div>
 
     <!-- Books Section -->
-    <div class="w-[1440px] h-[894px] flex flex-col items-center justify-center">
+    <div
+      class="w-[1440px] h-[894px] flex flex-col items-center justify-center bg-[#E0E0E0]"
+    >
       <!-- Title -->
       <div
         class="w-[1440px] h-[100px] flex items-center justify-center text-[54px] font-bold"
@@ -222,12 +222,12 @@
         class="w-[1290px] h-[120px] flex flex-col justify-center items-center"
       >
         <div
-          class="w-[1290px] h-[25px] flex items-center pl-5 text-[20px] font-bold"
+          class="w-[1290px] h-[25px] flex items-center pl-5 text-[20px] font-bold text-[#0F62FE] mb-3"
         >
           Library at a Glance
         </div>
         <div
-          class="w-[1290px] h-[92px] flex items-center pl-5 text-[42px] font-semibold"
+          class="w-[1290px] h-[92px] flex items-center pl-5 text-[42px] font-semibold mb-[20px]"
         >
           Explore key library insights, Stay informed about reading trends, user
           activity, and our library’s growth in real-time.
@@ -236,19 +236,135 @@
       <div
         class="w-[1290px] h-[256px] flex gap-[20px] justify-center items-center"
       >
-        <div class="w-[410px] h-[256px] flex items-center justify-center">
+        <div
+          class="w-[410px] h-[200px] flex items-center justify-center bg-slate-200"
+        >
           Chart
         </div>
         <div
           class="w-[739px] h-[184px] flex flex-col gap-[20px] justify-center"
         >
           <div class="flex flex-row gap-4">
-            <div class="w-[375.5px] h-[80px] bg-indigo-100">Card</div>
-            <div class="w-[375.5px] h-[80px] bg-indigo-100">Card</div>
+            <!-- card -->
+            <div
+              class="w-[375.5px] h-[80px] bg-[#FFC353] flex flex-row gap-[20px] justify-center items-center"
+            >
+              <div
+                class="w-[48px] h-[48px] bg-white flex justify-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z"
+                  />
+                </svg>
+              </div>
+              <div class="w-[260px] h-[48px] flex flex-col gap-[5px]">
+                <div class="w-[260px] h-[26px] font-bold text-[24px]">250+</div>
+                <div class="w-[2+0px] h-[26px] font-semibold text-[16px]">
+                  Happy members
+                </div>
+              </div>
+            </div>
+            <!-- card -->
+            <div
+              class="w-[375.5px] h-[80px] bg-[#FF866B] flex flex-row gap-[20px] justify-center items-center"
+            >
+              <div
+                class="w-[48px] h-[48px] bg-white flex justify-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z"
+                  />
+                </svg>
+              </div>
+              <div class="w-[260px] h-[48px] flex flex-col gap-[5px]">
+                <div class="w-[260px] h-[26px] font-bold text-[24px]">600+</div>
+                <div class="w-[2+0px] h-[26px] font-semibold text-[16px]">
+                  Book Recommendations
+                </div>
+              </div>
+            </div>
           </div>
           <div class="flex flex-row gap-4">
-            <div class="w-[375.5px] h-[80px] bg-indigo-100">Card</div>
-            <div class="w-[375.5px] h-[80px] bg-indigo-100">Card</div>
+            <!-- card -->
+            <div
+              class="w-[375.5px] h-[80px] bg-[#1CC198] flex flex-row gap-[20px] justify-center items-center"
+            >
+              <div
+                class="w-[48px] h-[48px] bg-white flex justify-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z"
+                  />
+                </svg>
+              </div>
+              <div class="w-[260px] h-[48px] flex flex-col gap-[5px]">
+                <div class="w-[260px] h-[26px] font-bold text-[24px]">
+                  1.8K+
+                </div>
+                <div class="w-[2+0px] h-[26px] font-semibold text-[16px]">
+                  Available Resources
+                </div>
+              </div>
+            </div>
+            <!-- card -->
+            <div
+              class="w-[375.5px] h-[80px] bg-[#F9F871] flex flex-row gap-[20px] justify-center items-center"
+            >
+              <div
+                class="w-[48px] h-[48px] bg-white flex justify-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z"
+                  />
+                </svg>
+              </div>
+              <div class="w-[260px] h-[48px] flex flex-col gap-[5px]">
+                <div class="w-[260px] h-[26px] font-bold text-[24px]">11K+</div>
+                <div class="w-[2+0px] h-[26px] font-semibold text-[16px]">
+                  Subscribers
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

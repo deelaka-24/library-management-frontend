@@ -1,1 +1,11 @@
-<p>dashboard-page works!</p>
+<div class="flex justify-center min-h-screen">
+  <div class="flex w-[1440px] min-h-screen">
+    <!-- Sidebar (fixed width, full height) -->
+    <app-nav class="w-[256px]"></app-nav>
+
+    <!-- Main Content (fills remaining space) -->
+    <div class="flex-grow min-h-screen">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
