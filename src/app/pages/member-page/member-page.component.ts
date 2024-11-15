@@ -1,35 +1,35 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Book } from '../../model/Book';
+import { Member } from '../../model/Member';
 import Swal from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-book-page',
+  selector: 'app-member-page',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './book-page.component.html',
-  styleUrls: ['./book-page.component.css'],
+  templateUrl: './member-page.component.html',
+  styleUrl: './member-page.component.css',
 })
-export class BookPageComponent {
-  public bookList: Book[] = [];
+export class MemberPageComponent {
+  public memberList: Member[] = [];
 
   constructor(private http: HttpClient) {
-    this.loadBookTable();
+    this.loadMemberTable();
   }
 
-  loadBookTable() {
+  loadMemberTable() {
     this.http
-      .get<Book[]>('http://localhost:8080/book/view-all-books')
+      .get<Member[]>('http://localhost:8080/member/view-all-members')
       .subscribe((data) => {
         data.forEach((obj) => {
-          this.bookList.push(obj);
+          this.memberList.push(obj);
         });
       });
   }
 
-  deleteBook(id: any) {
+  deleteMember(id: any) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -41,27 +41,27 @@ export class BookPageComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         this.http
-          .delete(`http://localhost:8080/book/delete-book-by-id/${id}`)
+          .delete(`http://localhost:8080/member/delete-member-by-id/${id}`)
           .subscribe((data) => {
             Swal.fire({
               title: 'Deleted!',
               text: 'Your file has been deleted.',
               icon: 'success',
             });
-            this.loadBookTable();
+            this.loadMemberTable();
           });
       }
     });
     //----------------------
   }
 
-  public selectedBook: any = {};
+  public selectedMember: any = {};
 
-  selectBook(book: any) {
-    this.selectedBook = book;
+  selectMember(member: any) {
+    this.selectedMember = member;
   }
 
-  updateBook() {
+  updateMember() {
     Swal.fire({
       title: 'Do you want to save the changes?',
       showDenyButton: true,
@@ -72,7 +72,10 @@ export class BookPageComponent {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         this.http
-          .put('http://localhost:8080/book/update-book', this.selectedBook)
+          .put(
+            'http://localhost:8080/member/update-member',
+            this.selectedMember
+          )
           .subscribe((data) => {
             Swal.fire('Saved!', '', 'success');
           });
