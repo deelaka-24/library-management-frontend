@@ -99,8 +99,11 @@
                 <td class="flex items-center justify-end px-4 py-3">
                   <div class="flex gap-2">
                     <button
-                      (click)="updateBook(book)"
                       type="button"
+                      (click)="selectBook(book)"
+                      id="updateProductButton"
+                      data-modal-target="updateProductModal"
+                      data-modal-toggle="updateProductModal"
                       class="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                     >
                       Update
@@ -121,4 +124,264 @@
       </div>
     </div>
   </section>
+</div>
+
+<!-- Modal toggle -->
+<!-- <div class="flex justify-center m-5">
+  <button
+    id="updateProductButton"
+    data-modal-target="updateProductModal"
+    data-modal-toggle="updateProductModal"
+    class="block text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+    type="button"
+  >
+    Update product
+  </button>
+</div> -->
+
+<!-- Main modal -->
+<div
+  id="updateProductModal"
+  tabindex="-1"
+  aria-hidden="true"
+  class="fixed top-0 left-0 right-0 z-50 items-center justify-center hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"
+>
+  <div class="relative w-full h-full max-w-2xl p-4 md:h-auto">
+    <!-- Modal content -->
+    <div
+      class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5"
+    >
+      <!-- Modal header -->
+      <div
+        class="flex items-center justify-between pb-4 mb-4 border-b rounded-t sm:mb-5 dark:border-gray-600"
+      >
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+          Update Book
+        </h3>
+        <button
+          type="button"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          data-modal-toggle="updateProductModal"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div>
+        <div class="grid gap-4 mb-4 sm:grid-cols-2">
+          <!-- id -->
+          <div>
+            <label
+              for="id"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >ID</label
+            >
+            <input
+              [(ngModel)]="selectedBook.id"
+              type="text"
+              name="id"
+              id="id"
+              [disabled]="true"
+              value="ID"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="ID"
+            />
+          </div>
+          <!-- title -->
+          <div>
+            <label
+              for="title"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Title</label
+            >
+            <input
+              [(ngModel)]="selectedBook.title"
+              type="text"
+              name="title"
+              id="title"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Title"
+            />
+          </div>
+          <!-- edition -->
+          <div>
+            <label
+              for="edition"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Edition</label
+            >
+            <input
+              [(ngModel)]="selectedBook.edition"
+              type="text"
+              name="edition"
+              id="edition"
+              value="5th"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Edition"
+            />
+          </div>
+          <!-- language -->
+          <div>
+            <label
+              for="language"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Language</label
+            >
+            <input
+              [(ngModel)]="selectedBook.language"
+              type="text"
+              name="language"
+              id="language"
+              value="English"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Language"
+            />
+          </div>
+          <!-- total QTY -->
+          <div>
+            <label
+              for="totalQty"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Total QTY</label
+            >
+            <input
+              [(ngModel)]="selectedBook.totalQuantity"
+              type="number"
+              name="totalQty"
+              id="totalQty"
+              value="100"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Total QTY"
+            />
+          </div>
+          <!-- available QTY -->
+          <div>
+            <label
+              for="availableQty"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Available QTY</label
+            >
+            <input
+              [(ngModel)]="selectedBook.availableQuantity"
+              type="number"
+              name="availableQty"
+              id="availableQty"
+              value="50"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Available QTY"
+            />
+          </div>
+          <!-- ISBN -->
+          <div>
+            <label
+              for="isbn"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >ISBN</label
+            >
+            <input
+              [(ngModel)]="selectedBook.isbn"
+              type="text"
+              name="isbn"
+              id="isbn"
+              value="123-4567890123"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="ISBN"
+            />
+          </div>
+          <!-- author -->
+          <div>
+            <label
+              for="author"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Author</label
+            >
+            <input
+              [(ngModel)]="selectedBook.author"
+              type="text"
+              name="author"
+              id="author"
+              value="Author Name"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Author"
+            />
+          </div>
+          <!-- price -->
+          <div>
+            <label
+              for="price"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Price</label
+            >
+            <input
+              [(ngModel)]="selectedBook.price"
+              type="number"
+              value="399"
+              name="price"
+              id="price"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Price"
+            />
+          </div>
+          <!-- Publisher ID -->
+          <div>
+            <label
+              for="publisherId"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Publisher ID</label
+            >
+            <input
+              [(ngModel)]="selectedBook.publisherId"
+              type="text"
+              name="publisherId"
+              id="publisherId"
+              value="PUB123"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Publisher ID"
+            />
+          </div>
+          <!-- Main Category -->
+          <div>
+            <label
+              for="mainCategory"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Main Category</label
+            >
+            <input
+              [(ngModel)]="selectedBook.mainCategory"
+              type="text"
+              value="Technology"
+              name="mainCategory"
+              id="mainCategory"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Main Category"
+            />
+          </div>
+        </div>
+        <!-- button -->
+        <div class="flex items-center space-x-4">
+          <button
+            data-modal-hide="updateProductModal"
+            (click)="updateBook()"
+            type="submit"
+            class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+          >
+            Update Book
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
